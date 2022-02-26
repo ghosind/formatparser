@@ -3,7 +3,7 @@ package formatparser
 const (
 	// TypeUnknown is an unknown type token
 	TypeUnknown int = iota
-	// Typetext is a text string
+	// TypeText is a text string
 	TypeText
 	// TypeKey is a key string
 	TypeKey
