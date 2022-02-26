@@ -2,12 +2,14 @@ package formatparser
 
 import "bytes"
 
+// isAlnum indicates a character is an alphabet or number.
 func isAlnum(c byte) bool {
 	return (c >= '0' && c <= '9') ||
 		(c >= 'a' && c <= 'z') ||
 		(c >= 'A' && c <= 'Z')
 }
 
+// Parse parses a format string to formatted token parts.
 func Parse(format string) []*FormatPart {
 	parts := make([]*FormatPart, 0)
 	part := new(FormatPart)

@@ -14,12 +14,13 @@ func getType(code int) string {
 }
 
 func Test_Parse(t *testing.T) {
-	format := "[%time] [%level] \\% %message"
+	format := "[%time%zone] [%level] \\% %message"
 
 	parts := Parse(format)
 	expects := []FormatPart{
 		{Type: TypeText, Value: "["},
 		{Type: TypeKey, Value: "time"},
+		{Type: TypeKey, Value: "zone"},
 		{Type: TypeText, Value: "] ["},
 		{Type: TypeKey, Value: "level"},
 		{Type: TypeText, Value: "] \\% "},
